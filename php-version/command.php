@@ -10,8 +10,8 @@ if ( ! class_exists( 'WP_CLI' ) ) {
  * @when before_wp_load
  */
 $php_version_command = function() {
-	echo 'Current PHP version : ' . phpversion();
-	echo \n;
-	echo \n;
+	echo 'Current PHP version : ' . phpversion()."\n"."\n";
+
 };
+
 WP_CLI::add_command( 'php-version', $php_version_command );
