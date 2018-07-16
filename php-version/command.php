@@ -5,11 +5,12 @@ if ( ! class_exists( 'WP_CLI' ) ) {
 }
 
 /**
- * Says "Hello World" to new users
+ * Displays the current PHP version this install is using
  *
  * @when before_wp_load
  */
-$hello_world_command = function() {
-	WP_CLI::success( "Hello world." );
+$php_version_command = function() {
+	echo 'Current PHP version : ' . phpversion(). ' \n ';
+
 };
-WP_CLI::add_command( 'hello-world', $hello_world_command );
+WP_CLI::add_command( 'php-version', $php_version_command );
