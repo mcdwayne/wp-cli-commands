@@ -12,7 +12,6 @@ if ( ! class_exists( 'WP_CLI' ) ) {
 $hello_world_command = function( $id ) {
 	echo "I am a tiny princess \n"; 
 echo 'Current PHP version : ' . phpversion();
-}
 	WP_CLI::success( "Hello world." );
 };
 WP_CLI::add_command( 'hello-world', $hello_world_command );
