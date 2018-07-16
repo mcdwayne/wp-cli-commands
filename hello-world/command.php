@@ -9,20 +9,16 @@ if ( ! class_exists( 'WP_CLI' ) ) {
  *
  * @when before_wp_load
  */
-$hello_world_command = function( $id = 0) {
+$hello_world_command = function( $id ) {
 	echo "I am a tiny princess \n"; 
 
-     	/**
-     	* Filters the array of tags for the given post.
-     	*
-     	* @since 2.3.0
-     	*
-     	* @see get_the_terms()
-     	*
-     	* @param array $terms An array of tags for the given post.
-     	*/
-    	return apply_filters( 'get_the_tags', get_the_terms( $id, 'post_tag' ) );
-
+$post_tags = get_the_tags();
+ 
+if ( $post_tags ) {
+    foreach( $post_tags as $tag ) {
+    echo $tag->name . ', '; 
+    }
+}
 	WP_CLI::success( "Hello world." );
 };
 WP_CLI::add_command( 'hello-world', $hello_world_command );
