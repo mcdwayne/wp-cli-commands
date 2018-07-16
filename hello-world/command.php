@@ -11,13 +11,7 @@ if ( ! class_exists( 'WP_CLI' ) ) {
  */
 $hello_world_command = function( $id ) {
 	echo "I am a tiny princess \n"; 
-
-$post_tags = get_the_tags();
- 
-if ( $post_tags ) {
-    foreach( $post_tags as $tag ) {
-    echo $tag->name . ', '; 
-    }
+echo 'Current PHP version : ' . phpversion();
 }
 	WP_CLI::success( "Hello world." );
 };
